@@ -24,7 +24,7 @@ plugins {
     id 'nebula.override' version '3.0.2'
     id 'nebula.optional-base' version '3.2.0'
     id 'nebula.dependency-recommender' version '5.0.0'
-    id 'nebula.resolution-rules' version '5.0.2'
+    id 'nebula.resolution-rules' version '5.1.0'
     id 'nebula.dependency-lock' version '5.0.1'
 }
 
