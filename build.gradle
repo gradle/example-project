@@ -24,11 +24,11 @@ plugins {
     id 'nebula.override' version '3.0.2'
     id 'nebula.optional-base' version '3.2.0'
     id 'nebula.dependency-recommender' version '5.0.0'
-    id 'nebula.resolution-rules' version '5.1.0'
     id 'nebula.dependency-lock' version '5.0.1'
 }
 
 apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: OrganisationDefaultsPlugin
 
 // setup your repositories
 repositories {
@@ -40,15 +40,12 @@ repositories {
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 
-configurations.all {
-    resolutionStrategy {
-        force 'alignmentrule:alignforce0:2.0.0'
-    }
-}
-
 dependencies {
     nebulaRecommenderBom 'example.nebula:bom:1.+@pom'
-    resolutionRules 'example.nebula:rules:1.+'
+
+    constraints {
+        implementation 'alignmentrule:alignforce0:2.0.0'
+    }
 
     implementation 'alignmentrule:b0:1.+'
     implementation 'alignmentrule:b1:1.+'
